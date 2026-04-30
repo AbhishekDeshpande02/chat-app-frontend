@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
 
-const WS_URL = "ws://localhost:8080";
+const WS_URL = "ws://chat-app-backend-production-d8af.up.railway.app";
 
 /* ─── Chat Popup ─────────────────────────────────────────────── */
 function ChatWindow({ onClose }) {
