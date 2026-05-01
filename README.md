@@ -62,7 +62,13 @@ npm run dev
 
 ---
 
+Add your project screenshots here.
 
+```md
+![Home Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/e34ee239a1010c7aefb439da63142e0664bd1668/src/assets/screenshots/Home.png)
+```
+
+---
 ## 🤝 Matchmaking Flow
 
 1. Connecting
