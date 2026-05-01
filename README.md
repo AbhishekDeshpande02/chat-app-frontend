@@ -62,12 +62,24 @@ npm run dev
 
 ---
 
-Add your project screenshots here.
+Home Page.
 
-```md
-![Home Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/e34ee239a1010c7aefb439da63142e0664bd1668/src/assets/screenshots/Home.png)
-```
+![Home Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Home.png?raw=true)
 
+Waiting Page
+![Waiting Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Finding_Partner.png?raw=true)
+
+Match Found!
+![Match Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Match_Found.png?raw=true)
+
+Connected!
+![Connected Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Connected.png?raw=true)
+
+Chatting Page
+![Chatting Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Chatting.png?raw=true)
+
+Disconnected!
+![Disconnecte Page](https://github.com/AbhishekDeshpande02/chat-app-frontend/blob/main/src/assets/screenshots/Disconnected.png?raw=true)
 ---
 ## 🤝 Matchmaking Flow
 
