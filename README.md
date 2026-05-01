@@ -138,17 +138,6 @@ Since the frontend runs on HTTPS:
 { "type": "skip_chat" }
 ```
 
-## Server → Client
-
-```json
-{ "type": "connected" }
-{ "type": "match_request" }
-{ "type": "paired" }
-{ "type": "message", "text": "Hi" }
-{ "type": "skipped" }
-{ "type": "partner_left" }
-```
-
 ---
 
 # ⚠️ Known Limitations
