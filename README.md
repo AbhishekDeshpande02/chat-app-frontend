@@ -1,16 +1,218 @@
-# React + Vite
+# 💬 Anonymous Real-Time Chat App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time anonymous 1-on-1 chat platform where users are instantly matched with strangers. Built using React, Node.js, and WebSockets, with a confirmation-based matchmaking flow.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- ⚡ Instant stranger matching
+- 🔒 Fully anonymous chat
+- 💬 Real-time messaging via WebSockets
+- 🤝 Match confirmation (Accept / Skip)
+- 🔄 Automatic re-queueing on disconnect
+- 🟢 Live status indicators
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+chat-app-frontend/
+│
+├── public/          
+├── src/          # All the codes go in here
+├── package.json
+├── index.html
+├── eslint.config.js
+├── vite.config.js 
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/AbhishekDeshpande02/chat-app-frontend.git
+cd chat-app-frontend
+```
+
+
+### 2️⃣ Install Dependencies
+
+#### Frontend
+
+```bash
+cd client
+npm install
+```
+
+
+## ▶️ Run the Application
+
+### Start Frontend
+
+```bash
+npm run dev
+```
+
+
+---
+
+
+## 🤝 Matchmaking Flow
+
+1. Connecting
+2. Waiting for another user
+3. Match Found ✅
+4. Both users receive:
+   - ✅ Accept Chat
+   - ❌ Skip
+5. If accepted ✅  → Chat starts 
+6. If skipped ❌ → User re-enters queue automatically
+
+---
+## 💬 Real-Time Messaging
+
+```text
+User A → Server → User B
+```
+
+- No database storage
+- Messages are ephemeral
+- Low-latency relay using WebSockets
+
+---
+
+## 🔌 Disconnection Handling
+
+| Scenario | Behavior |
+|----------|-----------|
+| User leaves during chat | Partner notified + re-queued |
+| User leaves during match | Match cancelled |
+| WebSocket error | User marked disconnected |
+
+---
+
+# 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Frontend | React (Hooks) |
+| Backend | Node.js |
+| Realtime | WebSockets (`ws`) |
+| Deployment | Vercel (Frontend), Railway (Backend) |
+
+---
+
+# 🚀 Deployment
+
+## 🌐 Frontend (Vercel)
+
+- Static React application
+- Auto deployment via GitHub integration
+
+
+## ⚙️ Backend (Railway)
+
+- Node.js WebSocket server
+- Runs on dynamic ports
+
+```js
+const PORT = process.env.PORT || 8080;
+```
+
+---
+
+# 🔐 Important: Secure WebSockets
+
+Since the frontend runs on HTTPS:
+
+```text
+❌ ws://  → Blocked (Mixed Content)
+✅ wss:// → Required
+```
+
+
+# 📡 WebSocket Event Protocol
+
+## Client → Server
+
+```json
+{ "type": "message", "text": "Hello" }
+{ "type": "accept_chat" }
+{ "type": "skip_chat" }
+```
+
+## Server → Client
+
+```json
+{ "type": "connected" }
+{ "type": "match_request" }
+{ "type": "paired" }
+{ "type": "message", "text": "Hi" }
+{ "type": "skipped" }
+{ "type": "partner_left" }
+```
+
+---
+
+# ⚠️ Known Limitations
+
+## 🔴 Scalability
+
+- Single-instance server
+- No horizontal scaling
+- Requires Redis/pub-sub for distributed scaling
+
+
+
+## 🧠 In-Memory State
+
+- Users stored in RAM
+- Server restart = all sessions lost
+
+
+
+## 💾 No Persistence
+
+- No user identity
+- Fully ephemeral system
+
+
+
+## 🔄 No Reconnection Logic
+
+- Users cannot resume sessions
+- Reconnect = new anonymous identity
+
+
+
+## 📊 Basic Matchmaking
+
+- FIFO queue only
+- No filters (interest, location, etc.)
+
+---
+
+# 📈 Future Improvements
+
+- 🔁 Redis for distributed matchmaking
+- 👤 User sessions & reconnection
+- 🎯 Interest-based matching
+- 🟡 Typing indicators & read receipts
+- ⚖️ Load balancing with sticky sessions
+
+## 👨‍💻 Author
+
+Your Name  
+GitHub: [@your-github](https://github.com/AbhishekDeshpande02)
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
