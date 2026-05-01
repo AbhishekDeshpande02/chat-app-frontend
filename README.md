@@ -116,15 +116,6 @@ User A → Server → User B
 - Auto deployment via GitHub integration
 
 
-## ⚙️ Backend (Railway)
-
-- Node.js WebSocket server
-- Runs on dynamic ports
-
-```js
-const PORT = process.env.PORT || 8080;
-```
-
 ---
 
 # 🔐 Important: Secure WebSockets
