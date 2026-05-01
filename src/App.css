@@ -432,3 +432,7 @@ body {
 .send-btn:disabled {
   opacity: 0.45;
 }
+.warning-banner{
+  color: #ff3b3b;
+  border: 1px solid #ff3b3b;
+}
