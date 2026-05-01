@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
-import { BACKEND_WS_URL } from "./env";
-const WS_URL = BACKEND_WS_URL;
 
+
+const WS_URL = import.meta.env.VITE_BACKEND_WS_URL;
 
 /* ─── Chat Popup ─────────────────────────────────────────────── */
 function ChatWindow({ onClose }) {
