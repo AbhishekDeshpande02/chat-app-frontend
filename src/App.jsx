@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
 
 
-const WS_URL = import.meta.env.VITE_BACKEND_WS_URL;
+const WS_URL = "wss://chat-app-backend-production-fad5.up.railway.app"; 
 
 /* ─── Chat Popup ─────────────────────────────────────────────── */
 function ChatWindow({ onClose }) {
